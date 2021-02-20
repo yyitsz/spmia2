@@ -27,11 +27,15 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-
-
+            <dependency>
+                <groupId>org.postgresql</groupId>
+                <artifactId>postgresql</artifactId>
+                <version>42.2.19.jre7</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
     <modules>
+        <module>configserver</module>
         <module>licensing-service</module>
     </modules>
 </project>
