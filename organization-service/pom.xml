@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
@@ -8,11 +8,13 @@
         <version>0.0.2-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
-    <artifactId>licensing-service</artifactId>
+    <artifactId>organization-service</artifactId>
     <version>0.0.2-SNAPSHOT</version>
     <packaging>jar</packaging>
-    <name>Eagle Eye Licensing Service</name>
-    <description>Licensing Service</description>
+
+    <name>Eagle Eye Organization Service</name>
+    <description>Organization Service</description>
+
 
     <dependencies>
         <dependency>
@@ -23,16 +25,19 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-config</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
-
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-config-client</artifactId>
@@ -46,7 +51,6 @@
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
         </dependency>
-
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-rsa</artifactId>
@@ -74,9 +78,10 @@
     </dependencies>
 
     <properties>
-       <!-- <start-class>com.thoughtmechanix.licenses.Application</start-class>-->
-        <docker.image.name>johncarnell/tmx-licensing-service</docker.image.name>
-        <docker.image.tag>tmx-licensing</docker.image.tag>
+
+        <!--    <start-class>com.thoughtmechanix.organization.Application</start-class>-->
+        <docker.image.name>johncarnell/tmx-organization-service</docker.image.name>
+        <docker.image.tag>tmx-organization-service</docker.image.tag>
     </properties>
 
     <build>
@@ -122,20 +127,10 @@
                     </resources>
                 </configuration>
             </plugin>
-
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <excludes>
-                        <exclude>
-                            <groupId>org.projectlombok</groupId>
-                            <artifactId>lombok</artifactId>
-                        </exclude>
-                    </excludes>
-                </configuration>
             </plugin>
-
         </plugins>
     </build>
 </project>

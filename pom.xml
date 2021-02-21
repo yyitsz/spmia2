@@ -37,5 +37,7 @@
     <modules>
         <module>configserver</module>
         <module>licensing-service</module>
+        <module>eurekasvr</module>
+        <module>organization-service</module>
     </modules>
 </project>
