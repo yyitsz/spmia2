@@ -10,6 +10,15 @@ spring:
   config:
     import: "optional:configserver:"
 
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
 #server:
 #  port: 6000
 
@@ -63,7 +72,7 @@ resilience4j.retry:
         - org.springframework.web.client.HttpServerErrorException
         - java.io.IOException
       ignoreExceptions:
-        #- io.github.robwin.exception.BusinessException
+      #- io.github.robwin.exception.BusinessException
     backendB:
       maxAttempts: 3
       waitDuration: 10s
@@ -71,7 +80,7 @@ resilience4j.retry:
         - org.springframework.web.client.HttpServerErrorException
         - java.io.IOException
       ignoreExceptions:
-        #- io.github.robwin.exception.BusinessException
+      #- io.github.robwin.exception.BusinessException
 
 resilience4j.bulkhead:
   instances:

@@ -1,7 +1,7 @@
 package com.thoughtmechanix.licenses.services;
 
 import com.thoughtmechanix.common.utils.UserContextHolder;
-import com.thoughtmechanix.licenses.clients.OrganizationRestTemplateClient;
+import com.thoughtmechanix.licenses.clients.OrganizationFeignClient;
 import com.thoughtmechanix.licenses.config.ServiceConfig;
 import com.thoughtmechanix.licenses.model.License;
 import com.thoughtmechanix.licenses.model.Organization;
@@ -28,9 +28,11 @@ public class LicenseService {
     @Autowired
     private ServiceConfig config;
 
-    @Autowired
-    private OrganizationRestTemplateClient organizationRestClient;
+//    @Autowired
+//    private OrganizationRestTemplateClient organizationRestClient;
 
+    @Autowired
+    private OrganizationFeignClient organizationRestClient;
 
     public License getLicense(String organizationId, String licenseId) {
         License license = licenseRepository.findByOrganizationIdAndLicenseId(organizationId, licenseId);
