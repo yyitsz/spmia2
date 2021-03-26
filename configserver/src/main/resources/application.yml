@@ -27,7 +27,8 @@ spring:
           #username: native-cloud-apps
           #password: 0ffended
         native:
-          #searchLocations: file://<chapter 3>/confsvr/src/main/resources/config/licensingservice,file://<chapter 3>confsvr/src/main/resources/config/organizationservice
-          searchLocations: classpath:config/,classpath:config/licensingservice
+          #searchLocations: classpath:config/{application}
+          searchLocations: file:////d:/javaProjects/spmia2-config-repo/{application}
   profiles:
-    active: git #native
+    active: native
+    #active: git

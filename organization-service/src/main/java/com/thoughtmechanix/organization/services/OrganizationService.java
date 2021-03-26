@@ -31,3 +31,4 @@ public class OrganizationService {
         orgRepository.deleteById(org.getId());
     }
 }
+

@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.thoughtmechanix</groupId>
-        <artifactId>tmx-parent-pom</artifactId>
+        <artifactId>tmx-parent</artifactId>
         <version>0.0.2-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>

@@ -13,7 +13,6 @@ public class OrganizationServiceController {
     @Autowired
     private OrganizationService orgService;
 
-
     @RequestMapping(value = "/{organizationId}", method = RequestMethod.GET)
     public Organization getOrganization(@PathVariable("organizationId") String organizationId) {
         return orgService.getOrg(organizationId);
@@ -25,13 +24,13 @@ public class OrganizationServiceController {
     }
 
     @RequestMapping(value = "/{organizationId}", method = RequestMethod.POST)
-    public void saveOrganization(@RequestBody Organization org) {
+    public void saveOrganization(@PathVariable("organizationId") String orgId, @RequestBody Organization org) {
         orgService.saveOrg(org);
     }
 
     @RequestMapping(value = "/{organizationId}", method = RequestMethod.DELETE)
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deleteOrganization(@PathVariable("orgId") String orgId, @RequestBody Organization org) {
+    public void deleteOrganization(@PathVariable("organizationId") String orgId, @RequestBody Organization org) {
         orgService.deleteOrg(org);
     }
 }
