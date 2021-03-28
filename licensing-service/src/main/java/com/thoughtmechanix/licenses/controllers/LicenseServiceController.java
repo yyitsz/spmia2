@@ -32,6 +32,7 @@ public class LicenseServiceController {
     public License getLicenses(@PathVariable("organizationId") String organizationId,
                                @PathVariable("licenseId") String licenseId) {
 
+        log.info("Thread ID {}", Thread.currentThread().getId());
         return licenseService.getLicense(organizationId, licenseId);
     }
 
