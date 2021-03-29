@@ -25,7 +25,7 @@ public class OrganizeServiceImpl implements OrganizeService {
     //@Retry(name = ORGANIZATION_SERVICE)
     //@TimeLimiter(name = ORGANIZATION_SERVICE)
     public Organization getOrganization(String organizationId) {
-        log.info("Thread ID {}", Thread.currentThread().getId());
+        log.debug("Get Org for {} from remote.", organizationId);
         return organizationClient.getOrganization(organizationId);
     }
 
@@ -36,7 +36,7 @@ public class OrganizeServiceImpl implements OrganizeService {
     //@Retry(name = ORGANIZATION_SERVICE)
     //@TimeLimiter(name = ORGANIZATION_SERVICE)
     public CompletableFuture<Organization> getOrganizationAsync(String organizationId) {
-        log.info("Thread ID {}", Thread.currentThread().getId());
+        log.debug("Get Org for {} from remote.", organizationId);
         return CompletableFuture.completedFuture(organizationClient.getOrganization(organizationId));
     }
 }

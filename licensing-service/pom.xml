@@ -50,10 +50,10 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-config-client</artifactId>
         </dependency>
-     <!--   <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-        </dependency>-->
+        <!--   <dependency>
+               <groupId>com.h2database</groupId>
+               <artifactId>h2</artifactId>
+           </dependency>-->
 
         <dependency>
             <groupId>org.postgresql</groupId>
@@ -110,7 +110,7 @@
     </dependencies>
 
     <properties>
-       <!-- <start-class>com.thoughtmechanix.licenses.Application</start-class>-->
+        <!-- <start-class>com.thoughtmechanix.licenses.Application</start-class>-->
         <docker.image.name>johncarnell/tmx-licensing-service</docker.image.name>
         <docker.image.tag>tmx-licensing</docker.image.tag>
     </properties>

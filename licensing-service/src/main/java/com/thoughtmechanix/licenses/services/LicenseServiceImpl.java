@@ -37,7 +37,7 @@ public class LicenseServiceImpl implements LicenseService {
     public License getLicense(String organizationId, String licenseId) {
         License license = licenseRepository.findByOrganizationIdAndLicenseId(organizationId, licenseId);
 
-        log.info("Thread ID {}", Thread.currentThread().getId());
+        //log.info("Thread ID {}", Thread.currentThread().getId());
 
         //Organization org = organizeService.getOrganization(organizationId);
         Organization org = null;
@@ -50,7 +50,7 @@ public class LicenseServiceImpl implements LicenseService {
             log.error("error", e);
             //throw e.getCause();
         }
-        if(org == null) {
+        if (org == null) {
             org = new Organization();
         }
         return license

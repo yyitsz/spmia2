@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @RestController
@@ -29,10 +30,10 @@ public class LicenseServiceController {
     }
 
     @RequestMapping(value = "/{licenseId}", method = RequestMethod.GET)
-    public License getLicenses(@PathVariable("organizationId") String organizationId,
+    public License getLicenses(HttpServletRequest request, @PathVariable("organizationId") String organizationId,
                                @PathVariable("licenseId") String licenseId) {
-
-        log.info("Thread ID {}", Thread.currentThread().getId());
+        log.debug("Found tmx-correlation-id in license-service-controller: {} ", request.getHeader("tmx-correlation-id"));
+        //log.info("Thread ID {}", Thread.currentThread().getId());
         return licenseService.getLicense(organizationId, licenseId);
     }
 
