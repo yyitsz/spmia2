@@ -46,5 +46,7 @@
         <module>licensing-service</module>
         <module>eurekasvr</module>
         <module>organization-service</module>
+        <module>gateway</module>
+        <module>specialroutes-service</module>
     </modules>
 </project>
