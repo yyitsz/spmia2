@@ -10,18 +10,20 @@ import org.springframework.stereotype.Service;
 
 import java.util.concurrent.CompletableFuture;
 
+import static com.thoughtmechanix.licenses.clients.OrganizationFeignClient.ORGANIZATION_SERVICE;
+
 @Service
 @Slf4j
 public class OrganizeServiceImpl implements OrganizeService {
-    public static final String ORGANIZATION_SERVICE = "organizationService";
+
 
     @Autowired
     private OrganizationFeignClient organizationClient;
 
     @Override
-    @CircuitBreaker(name = ORGANIZATION_SERVICE)
+    //@CircuitBreaker(name = ORGANIZATION_SERVICE)
     //@RateLimiter(name = ORGANIZATION_SERVICE)
-    @Bulkhead(name = ORGANIZATION_SERVICE, type = Bulkhead.Type.THREADPOOL)
+    //@Bulkhead(name = ORGANIZATION_SERVICE, type = Bulkhead.Type.THREADPOOL)
     //@Retry(name = ORGANIZATION_SERVICE)
     //@TimeLimiter(name = ORGANIZATION_SERVICE)
     public Organization getOrganization(String organizationId) {
@@ -30,9 +32,9 @@ public class OrganizeServiceImpl implements OrganizeService {
     }
 
     @Override
-    @CircuitBreaker(name = ORGANIZATION_SERVICE)
+    //@CircuitBreaker(name = ORGANIZATION_SERVICE)
     //@RateLimiter(name = ORGANIZATION_SERVICE)
-    @Bulkhead(name = ORGANIZATION_SERVICE, type = Bulkhead.Type.THREADPOOL)
+    //@Bulkhead(name = ORGANIZATION_SERVICE, type = Bulkhead.Type.THREADPOOL)
     //@Retry(name = ORGANIZATION_SERVICE)
     //@TimeLimiter(name = ORGANIZATION_SERVICE)
     public CompletableFuture<Organization> getOrganizationAsync(String organizationId) {
